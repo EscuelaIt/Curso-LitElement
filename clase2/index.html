@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Templates en LitElement</title>
+</head>
+<body>
+  <h1>Templates en LitElement</h1>
+
+  <timestamp-to-date timestamp="9245454545433"></timestamp-to-date>
+  <hr>
+  <eit-input placeholder="Escribe algo..." label="Nombre"></eit-input>
+  <eit-input disabled></eit-input>
+  <eit-input value="1234" label="Edad"></eit-input>
+
+  <hr>
+  <test-element></test-element>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis velit quasi corrupti qui vero ipsa praesentium repudiandae dicta natus modi magni, illum vel porro ut rerum. Impedit sapiente enim veniam.</p>
+  <hr>
+  <tag-list tags='["PHP", "Javascript", "HTML", "Desarrollo"]'>
+    <p>
+      ersfsdfsdfsdfsdf
+    </p>
+  </tag-list>
+  
+  <hr>
+
+  <menu-overlay id="menu1">
+    <p>Esto es el ligth DOM</p>
+    <button id="boton">clic</button>
+    <div slot="trigger">Menú</div>
+  </menu-overlay>
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quaerat animi nostrum unde, reiciendis dolore! Nobis vitae dignissimos delectus sequi eligendi assumenda nemo ab quia ipsum veniam. Deserunt, similique nisi.</p>
+
+  <menu-overlay>
+      <p>dfsfsdfsdfsd dsfsd fsdf</p>
+      <span slot="trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+  </menu-overlay>
+
+
+  <p>Accusamus dolorem ducimus voluptate explicabo temporibus deleniti, cupiditate harum pariatur! Eveniet exercitationem nihil alias laboriosam molestias unde neque excepturi aliquam facilis cupiditate quibusdam nam beatae perspiciatis, temporibus sed necessitatibus in!</p>
+  <p>Deserunt quia omnis praesentium qui ex dignissimos labore delectus non perspiciatis repudiandae. Culpa eligendi laborum libero cumque facilis facere itaque optio iure veritatis aut sit laboriosam, ab id corrupti consequuntur.</p>
+
+  <script src="./src/index.js" type="module"></script>
+
+  <script>
+    document.getElementById('boton').addEventListener('click', function() {
+      document.getElementById('menu1').close();
+    });
+  </script>
+</body>
+</html>
