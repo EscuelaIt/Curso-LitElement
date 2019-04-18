@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clase 3 - Styles</title>
+  <style>
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      --card-box-title-color: #6ac;
+      --eit-icon-color: red;
+    }
+    a {
+      color: orange;
+    }
+    span {
+      color: blueviolet;
+    }
+
+    card-box {
+      background-color: #f0f0f0;
+      margin-bottom: 15px;
+      --eit-icon-color: blue;
+      --eit-icon-size: 48px;
+    }
+
+    .segunda {
+      --card-box-title-background-color: red;
+      --card-box-title-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clase 3 - Styles</h1>
+  <span>fdfdf</span>
+  <card-box title="Prueba!!!">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam provident illo quasi minus mollitia natus ipsa officiis maiores, magni repellat saepe consequuntur obcaecati accusamus distinctio quia explicabo doloremque aut ducimus?
+      <a href="#">Dos</a>
+
+    </p>
+    <div>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, consectetur. Magnam eveniet debitis, vitae dolorem deleniti doloribus temporibus expedita ea facere dolor asperiores corrupti quisquam, aut, totam quis reprehenderit harum.</p>
+    </div>
+    <a href="#">Uno</a>
+  </card-box>
+  <card-box hidden>
+    hola!!    
+  </card-box>
+
+  <card-box title="mi titulo" class="segunda">
+      hola!!    
+    </card-box>
+
+    <card-box class="red" class="segunda">
+        hola!!  <eit-icon></eit-icon>  
+      </card-box>
+
+
+  <p>
+    efsdfsdf sdfs dfsd <eit-icon icon="bookmark"></eit-icon>
+  </p>
+
+  <user-avatar></user-avatar>
+  <user-avatar src="midesweb.jpg"></user-avatar>
+
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script> 
+  <script src="src/index.js" type="module"></script>
+
+</body>
+</html>
