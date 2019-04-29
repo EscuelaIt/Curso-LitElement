@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { estilosCompartidos } from './estilos-compartidos';
 
-console.log(estilosCompartidos);
 class CardBox extends LitElement {
 
   static get styles() {
