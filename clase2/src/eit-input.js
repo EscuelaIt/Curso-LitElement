@@ -6,7 +6,8 @@ class EitInput extends LitElement {
       label: { type: String },
       placeholder: { type: String },
       disabled: { type: Boolean },
-      value: { type: String }
+      value: { type: String }, 
+      name: { type: String }
     };
   }
   constructor() {
@@ -56,6 +57,7 @@ class EitInput extends LitElement {
           : ''
         }
         <input 
+          name="${this.name}"
           type="text" 
           id="textField"
           placeholder="${this.placeholder}" 

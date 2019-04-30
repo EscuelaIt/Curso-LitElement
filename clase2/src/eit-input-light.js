@@ -1,25 +1,13 @@
 import { LitElement, html, css } from 'lit-element';
 
-class EitInput extends LitElement {
+class EitInputLight extends LitElement {
   static get properties() {
     return {
       label: { type: String },
-      placeholder: { 
-        type: String,
-        attribute: 'ph'
-      },
+      placeholder: { type: String },
       disabled: { type: Boolean },
-      value: { 
-        reflect: true,
-        converter: {
-          toAttribute(value) {
-            return value.toString().toLowerCase();
-          },
-          fromAttribute(value) {
-            return value.toString().toUpperCase();
-          }
-        } 
-      }
+      value: { type: String },
+      name: { type: String }
     };
   }
   constructor() {
@@ -28,13 +16,15 @@ class EitInput extends LitElement {
     this.placeholder = '';
     this.value = '';
   }
-  static get styles() {
-    return css`
+
+  render() {
+    return html`
+      <style>
       :host {
         display: block;
         margin-bottom: 12px;
       }
-      label {
+      .labeltag {
         display: block;
         color: #888;
         margin-bottom: 4px;
@@ -50,7 +40,7 @@ class EitInput extends LitElement {
       }
       input:focus {
         outline: none;
-        border-color: #6af
+        border-color: #6af;
       }
       input::placeholder {
         color: #ccc;
@@ -59,48 +49,34 @@ class EitInput extends LitElement {
         background-color: #f5f5f5;
         border-color: #eee;
       }
-    `;
-  }
-  render() {
-    return html`
+      </style>
       <div>
         ${ this.label 
-          ? html`<label for="textField">${this.label}</label>` 
+          ? html`<label class="labeltag" for="textField">${this.label}</label>` 
           : ''
         }
         <input 
+          name="${this.name}"
           type="text" 
           id="textField"
           placeholder="${this.placeholder}" 
           ?disabled="${this.disabled}"
           @keypress="${this.lookForEnter}"
           .value="${this.value}"
-          @input=${this.inputChanged}
         >
       </div> 
     `;
   }
 
-  attributeChangedCallback(nameAttr, oldValue, newValue) {
-    super.attributeChangedCallback(nameAttr, oldValue, newValue);
-    //console.log('cambiado el atributo ', nameAttr, newValue, oldValue);
-  }
-
-  firstUpdated() {
-    this.shadowRoot.getElementById('textField').focus();
-  }
-
   lookForEnter(e) {
     let keycode = (e.keyCode ? e.keyCode : e.which);
     if (keycode == '13') {
-        //console.log('enter!!!', e.target.value);
-        //console.log('Has pulsado enter!');
-        this.dispatchEvent(new CustomEvent('eit-input-enter'));
+        console.log('Has pulsado enter!');
     }
   }
 
-  inputChanged(e) {
-    this.value = e.target.value;
+  createRenderRoot() {
+    return this;
   }
 }
-customElements.define('eit-input', EitInput);
+customElements.define('eit-input-light', EitInputLight);

@@ -9,6 +9,7 @@ class TagList extends LitElement {
   constructor() {
     super();
     this.tags = [];
+    this.addEventListener('click', (e) => this.addRandomTag())
   }
   static get styles() {
     return css`
@@ -34,6 +35,7 @@ class TagList extends LitElement {
     console.log('addRandomTag')
     let valor = Math.floor(Math.random() * 1000);
     this.tags.push(valor);
+    this.requestUpdate();
   }
 }
 customElements.define('tag-list', TagList);
