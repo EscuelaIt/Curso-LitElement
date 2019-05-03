@@ -23,7 +23,7 @@ class EitSwitch extends LitElement {
     }
     span {
       display: flex;
-      background-color: #95D5D5;
+      background-color: var(--eit-switch-background-color, #95D5D5);
       border-radius: 4px;
       width: 20px;
       height: 20px;
