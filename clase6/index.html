@@ -14,12 +14,27 @@
 <body>
   <h1>Clase 6 - Composición</h1>
   
-  <eit-switch-label label="Opción 1" checked></eit-switch-label>
-
+  <app-lit>
+      <eit-switch-label label="Opción 1" checked id="interruptor"></eit-switch-label>
+      <eit-switch-label label="Opción dos!"></eit-switch-label>
+    
+      <hr>
+    
+      <menu-overlay-position top="-28">
+          <p>Esto es el contenido del menú, que se superpone como una capa.</p>
+          <div><a href="#">Aceptar</a></div>
+          <span slot="trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+      </menu-overlay-position>
+  </app-lit>
   
   <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script> 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./src/index.js" type="module"></script>
 
+  <script>
+  document.getElementById('interruptor').addEventListener('feedback-message', (e) => {
+    console.log('Este es el mensaje', e.detail);
+  })
+  </script>
 </body>
 </html>

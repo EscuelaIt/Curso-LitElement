@@ -1,7 +1,11 @@
 import { LitElement, html, css } from 'lit-element';
-import './eit-input';
+import { FeedbackMixin } from './mixins/feedback-mixin';
+import { ContentTemplate } from './mixins/content-template-mixin';
 
-class MenuOverlay extends LitElement {
+import { sharedStyles } from './shared-styles';
+
+
+export class MenuOverlay extends ContentTemplate(FeedbackMixin(LitElement)) {
 
   static get properties() {
     return {
@@ -26,7 +30,7 @@ class MenuOverlay extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [sharedStyles,css`
     :host {
       position: relative;
     }
@@ -44,13 +48,14 @@ class MenuOverlay extends LitElement {
     .closed {
       display: none;
     }
-    `;
+    `];
   }
 
   render() {
     return html`
       ${ this.triggerTemplate }
       ${ this.contentTemplate }
+      ${ this.moreContent }
     `;
   }
 
@@ -64,7 +69,6 @@ class MenuOverlay extends LitElement {
 
   get contentTemplate() {
     return html`
-      <eit-input label="escribe y pulsa enter" @eit-input-enter=${this.toggle}></eit-input>
       <section class="${ this.closed ? 'closed' : '' }" @click="${this.doClick}">
         <slot></slot>
         <a href="#" @click="${this.closeHandler}">Cerrar</a>
@@ -79,6 +83,7 @@ class MenuOverlay extends LitElement {
   }
 
   closeHandler(e) {
+    this.sendFeedback('has cerrado!!!');
     e.preventDefault();
     this.close();
   }
