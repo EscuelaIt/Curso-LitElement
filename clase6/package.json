@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "lit-element": "^2.1.0"
+    "lit-element": "^2.1.0",
+    "social-icon": "^1.0.1"
   }
 }

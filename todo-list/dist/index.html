@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="Description" content="Put your description here.">
+
+  <style>
+    * {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #ededed;
+    }
+  </style>
+  <title>todo-list</title>
+<link rel="preload" as="script" crossorigin="anonymous" href="./todo-app.js"></head>
+<body>
+  <todo-app></todo-app>
+
+  
+
+
+
+<script type="module">window.importModule=src=>import(src);</script><script type="module">
+      (async () => {
+        const p = [];
+        if (!('attachShadow' in Element.prototype) || !('getRootNode' in Element.prototype)) {p.push('./polyfills/webcomponent-polyfills.js');}
+        if (!window.importModule) {p.push('./polyfills/dynamic-import-polyfill.js');}
+        if (p.length > 0) {await Promise.all(p.map(p => new Promise((rs, rj) => {const s = document.createElement('script');s.src = p;s.onerror = () => rj(`Failed to load ${s.s}`);s.onload = () => rs();document.head.appendChild(s);})));}
+        importModule('./todo-app.js');
+      })();
+    </script></body></html>
